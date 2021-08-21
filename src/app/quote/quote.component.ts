@@ -10,8 +10,7 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[]=[
-      new Quote('Quote ni wewe ', 'Mandela', 'Me'),
-      new Quote('Quote ya pili', 'HAjulikani', 'NI mimi')
+      new Quote('The stars are for only those who can reach them', 'HAjulikani', 'NI mimi')
   ]
 
   constructor() { }

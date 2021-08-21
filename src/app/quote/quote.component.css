@@ -1,18 +1,65 @@
 .navbar-custom {
-    background-color: #1D2024;
-    height: 100px;
+  background-color: #1d2024;
+  height: 100px;
 }
 
 nav li .active {
-    color: #57CBCC !important;
+  color: #57cbcc !important;
 }
 
-nav li a{
-    color: #CACED2 ;
+nav li a {
+  color: #caced2;
 }
-nav button{
-    border-radius: 0;
-    color:#57CBCC;
-    border: 1px solid #57CBCC;
-    
+nav button {
+  border-radius: 0;
+  color: #57cbcc;
+  border: 1px solid #57cbcc;
+}
+
+.banner {
+  background: url("../../assets/bgbanner.png") no-repeat;
+  height: 90vh;
+  padding: 0;
+}
+
+.banner-inner {
+  background-color: rgba(29, 32, 36, 0.8);
+  height: 90vh;
+  padding: 0;
+  color: white;
+}
+
+.banner-inner button {
+  border-radius: 0;
+  color: ivory;
+  border: 1px solid ivory;
+}
+
+.quote-cards {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #353b43;
+}
+
+.quote-sec {
+  background-color: #353b43;
+}
+
+.card {
+  background-color: #242931;
+  color: white;
+}
+
+.card-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+}
+
+.card img:hover{
+    transform: scale(1.2);
+    transition: ease-in-out;
+    transition-duration: 300ms;
 }
