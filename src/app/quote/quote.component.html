@@ -75,7 +75,9 @@
     <div class="col mt-4 mb-3" *ngFor="let quote of quotes">
       <div class="card">
         <div class="d-flex justify-content-between mx-3">
-          <div class="div">{{ quote.postDate | date }}</div>
+          <div class="div">
+              <p class="mt-1">{{ quote.postDate | date }}</p>
+            </div>
           <div class="d-flex my-1 mx-1 justify-content-end align-items-center">
             <div class="me-3">
               <img src="../../assets/upVote.png" alt="like" class="me-1" />
@@ -89,10 +91,16 @@
         </div>
         <hr />
         <div class="card-body">
-          <h5 class="card-title">{{ quote.quote }}</h5>
+          <h5 class="card-title">&#8220; {{ quote.quote }}. &#8221;</h5>
           <hr />
           <button class="btn btn-primary">Details</button>
-          <p class="card-text"></p>
+          <div class="card-text">
+              <p> Author: {{quote.author}} </p>
+              <p>Publisher: {{quote.publisher}} </p>
+              <div>
+                  <img src="../../assets/trash.png" alt="delete">
+              </div>
+          </div>
         </div>
       </div>
     </div>
