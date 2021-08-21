@@ -1,0 +1,18 @@
+.navbar-custom {
+    background-color: #1D2024;
+    height: 100px;
+}
+
+nav li .active {
+    color: #57CBCC !important;
+}
+
+nav li a{
+    color: #CACED2 ;
+}
+nav button{
+    border-radius: 0;
+    color:#57CBCC;
+    border: 1px solid #57CBCC;
+    
+}
