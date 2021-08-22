@@ -36,7 +36,7 @@ nav button {
 }
 
 .quote-cards {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   background-color: #353b43;
 }
@@ -62,4 +62,28 @@ nav button {
     transform: scale(1.2);
     transition: ease-in-out;
     transition-duration: 300ms;
+}
+
+.card-body button{
+  border-radius: 0;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+footer {
+  background-color: #1D2024;
+  font-weight: 300;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.logo {
+  margin-bottom: 20px;
+  height: 65px;
+}
+
+.copyright {
+  font-size: 18px;
+color: rgba(255, 255, 255, 0.5);
 }

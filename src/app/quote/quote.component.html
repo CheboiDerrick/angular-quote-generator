@@ -76,15 +76,15 @@
       <div class="card">
         <div class="d-flex justify-content-between mx-3">
           <div class="div">
-            <p class="mt-1">{{ quote.postDate | date }}</p>
+            <p class="mt-1">{{ quote.postDate | elapsedTime}}</p>
           </div>
           <div class="d-flex my-1 mx-1 justify-content-end align-items-center">
             <div class="me-3">
-              <img src="../../assets/upVote.png" alt="like" class="me-1" />
+              <img src="../../assets/upVote.png" alt="like" class="me-1" (click)='addUpvote(i)' />
               {{ quote.upVote }}
             </div>
             <div>
-              <img src="../../assets/downVote.png" alt="dislike" class="me-1" />
+              <img src="../../assets/downVote.png" alt="dislike" class="me-1" (click)='addDownvote(i)' />
               {{ quote.downVote }}
             </div>
           </div>
@@ -98,12 +98,22 @@
           </button>
           <app-quote-detail
             *ngIf="quote.showDetail"
-            [quote]="quote" (quoteDelete) = 'deleteQuote($event,i)'
+            [quote]="quote" (isDeleteQuote) = 'quoteDelete($event,i)'
           ></app-quote-detail>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<app-quote-form></app-quote-form>
+<app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
+<footer class='text-center'>
+  <div class="logo">
+    <img src="../../assets/Timeless 1.svg" alt="logo">
+  </div>
+  <div class="address">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa impedit porro rerum necessitatibus quis.</p>
+  </div>
+  <div class="copyright">
+    <p>&copy; 2021 | Timeless Quotes</p>
+  </div>
+</footer>

@@ -20,15 +20,15 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form (ngSubmit)='submitQuote' #quoteForm='ngForm'>
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control"
-              id="floatingInput"
-              placeholder="name@example.com"
+              id="quote" name="quote" [(ngModel)]="newQuote.quote"
+              placeholder="Dreamers do not sleep"
             />
-            <label for="floatingInput">Quote</label>
+            <label for="quote">Quote</label>
             <div id="textHelp" class="form-text">
               Your timeless quote goes here
             </div>
@@ -37,8 +37,8 @@
             <input
               type="email"
               class="form-control"
-              id="floatingInput"
-              placeholder="name@example.com"
+              id="author" name="author"
+              placeholder="Nelson Mandela"
             />
             <label for="floatingInput">Author</label>
             <div id="emailHelp" class="form-text">Credit the awesome mind</div>
@@ -54,12 +54,14 @@
             <div id="emailHelp" class="form-text">Your name here</div>
           </div>
           <div class="text-center">
-            <button type="button" class="btn btn-primary">Publish Quote</button>
+            <button type="submit" class="btn btn-primary">Publish Quote</button>
           </div>
         </form>
       </div>
       <div class="modal-footer d-flex align-items-center justify-content-end">
-        <button type="button" class="btn btn-danger">Close</button>
+        <button type="button" class="btn btn-danger" type="button"
+        data-bs-dismiss="modal"
+        aria-label="Close">Close</button>
       </div>
     </div>
   </div>

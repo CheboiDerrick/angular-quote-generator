@@ -9,19 +9,34 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
 
-  quotes:Quote[]=[
-      new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor')
+  quotes: Quote[] = [
+    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor'),
+    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor'),
+    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor'),
+    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor')
   ]
 
-  toggleDetails(index:number){
+  toggleDetails(index: number) {
     this.quotes[index].showDetail = !this.quotes[index].showDetail;
   }
 
-  deleteQuote(isDeleteQuote:boolean, index:number){
+  addNewQuote(quote: Quote) {
+    this.quotes.push(quote)
+  }
+
+  addUpvote(index: number) {
+    this.quotes[index].upVote += 1
+  }
+
+  addDownvote(index: number) {
+    this.quotes[index].downVote += 1
+  }
+
+  quoteDelete(isDeleteQuote: boolean, index: number) {
     if (isDeleteQuote) {
-      let toDelete= confirm(`This will remove ${this.quotes[index].publisher}'s quote. Proceed?`)
+      let toDelete = confirm(`This will remove ${this.quotes[index].publisher}'s quote. Proceed?`)
       if (toDelete) {
-        this.quotes.splice(index,1)
+        this.quotes.splice(index, 1)
       }
     }
   }
