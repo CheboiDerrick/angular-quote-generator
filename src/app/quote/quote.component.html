@@ -72,12 +72,12 @@
       quote-cards
     "
   >
-    <div class="col mt-4 mb-3" *ngFor="let quote of quotes">
+    <div class="col mt-4 mb-3" *ngFor="let quote of quotes; let i = index">
       <div class="card">
         <div class="d-flex justify-content-between mx-3">
           <div class="div">
-              <p class="mt-1">{{ quote.postDate | date }}</p>
-            </div>
+            <p class="mt-1">{{ quote.postDate | date }}</p>
+          </div>
           <div class="d-flex my-1 mx-1 justify-content-end align-items-center">
             <div class="me-3">
               <img src="../../assets/upVote.png" alt="like" class="me-1" />
@@ -93,14 +93,13 @@
         <div class="card-body">
           <h5 class="card-title">&#8220; {{ quote.quote }}. &#8221;</h5>
           <hr />
-          <button class="btn btn-primary">Details</button>
-          <div class="card-text">
-              <p> Author: {{quote.author}} </p>
-              <p>Publisher: {{quote.publisher}} </p>
-              <div>
-                  <img src="../../assets/trash.png" alt="delete">
-              </div>
-          </div>
+          <button class="btn btn-primary" (click)="toggleDetails(i)">
+            Details
+          </button>
+          <app-quote-detail
+            *ngIf="quote.showDetail"
+            [quote]="quote" (quoteDelete) = 'deleteQuote($event,i)'
+          ></app-quote-detail>
         </div>
       </div>
     </div>
@@ -108,5 +107,3 @@
 </div>
 
 <app-quote-form></app-quote-form>
-
-<app-quote-detail></app-quote-detail>

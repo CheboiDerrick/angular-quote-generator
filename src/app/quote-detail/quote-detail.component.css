@@ -1,0 +1,12 @@
+.card-text {
+    font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+}
+.card-text img:hover {
+  transform: scale(1.2);
+  transition: ease-in-out;
+  transition-duration: 300ms;
+}
