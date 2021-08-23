@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 .navbar-custom {
   background-color: #1d2024;
   /* height: 100px; */
@@ -68,10 +72,33 @@ h1 {
   line-height: 117px; */
 }
 
+.all-quotes{
+  background-color: #242931;
+}
+
+.all-quotes h2{
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 59px;
+  color: white;
+}
+
+.all-quotes h2>span{
+  color: #57cbcc;
+}
+
+.hr{
+  width: 30%;
+  margin: auto;
+  height: 6px;
+  background-color:#57cbcc;
+}
+
 .quote-cards {
   width: 90%;
   margin: 0 auto;
-  background-color: #353b4333;
 }
 
 .quote-sec {
@@ -84,6 +111,9 @@ h1 {
 .card {
   background-color: #242931;
   color: white;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .card-title {

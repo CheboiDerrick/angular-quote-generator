@@ -6,16 +6,12 @@ import { Quote } from './quote';
   selector: '[appMostliked]'
 })
 export class MostlikedDirective {
-  @Input () quotes: any=[]
+  @Input () sortByLikes: any=[]
   constructor(private elem:ElementRef) {}
 
   ngOnInit(){
-    this.quotes = this.quotes.sort(function (q1:any, q2:any) {
-      return q2.upVote - q1.upVote;
-    });
-  
-    this.quotes()[0]=this.elem
-    this.elem.nativeElement.style.border='2px dashed'
+    // this.sortByLikes[0]=this.elem
+    // this.elem.nativeElement.style.border='2px dashed'
     }
       
     }

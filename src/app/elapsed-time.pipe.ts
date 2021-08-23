@@ -2,52 +2,56 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'elapsedTime',
-  
+
 })
 export class ElapsedTimePipe implements PipeTransform {
   transform(value: any): any {
-  
-    let input = value.valueOf();
-    let msPerMinute = 60 * 1000;
-    let msPerHour = msPerMinute * 60;
-    let msPerDay = msPerHour * 24;
-    let msPerMonth = msPerDay * 30;
-    let msPerYear = msPerDay * 365;
+    let seconds: number = 0
+    let minutes: number
+    let hours: number
+    let days: number
+    let display: any
+    let elapsedTimer = (): any => {
 
-    let update=setInterval(function(){ 
-    var current = new Date().valueOf();
-    var elapsed = current - input;
+      let now = new Date().getTime();
+      console.log(now);
+      console.log(value);
 
-    if (elapsed < msPerMinute) {
-      return Math.round(elapsed / 1000) + ' seconds ago';
+      seconds = Math.floor(((now) - value) / 1000);
+      minutes = Math.floor(seconds / 60);
+      hours = Math.floor(minutes / 60);
+      days = Math.floor(hours / 24);
+
+      hours = hours - (days * 24);
+      minutes = minutes - (days * 24 * 60) - (hours * 60);
+      seconds = seconds - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
+
+      console.log(seconds);
+
+
     }
+    setInterval(function () {
+      if (days >= 1) {
+        return days + ' days ago'
+      } else if (hours >= 1) {
+        return hours + ' hours ago'
+      } else if (minutes >= 1) {
+        console.log(minutes)
+        display = minutes + ' minute(s) ago'
+        console.log(display);
 
-    else if (elapsed < msPerHour) {
-      return Math.round(elapsed / msPerMinute) + ' minutes ago';
-    }
+        return display
+      } else if (seconds >= 1) {
+        console.log(seconds);
+        display = seconds + ' seconds ago'
+        console.log(display);
 
-    else if (elapsed < msPerDay) {
-      return Math.round(elapsed / msPerHour) + ' hours ago';
-    }
+        return display
+      }
 
-    else if (elapsed < msPerMonth) {
-      return 'approximately ' + Math.round(elapsed / msPerDay) + ' days ago';
-    }
-
-    else if (elapsed < msPerYear) {
-      return 'approximately ' + Math.round(elapsed / msPerMonth) + ' months ago';
-    }
-
-    else {
-      console.log('inside the if condition', elapsed);
-      return 'approximately ' + Math.round(elapsed / msPerYear) + ' years ago';
-    }
-     }, 1000);
-
-     return update
+    }, 1000);
 
   }
+
+
 }
-
-
-
