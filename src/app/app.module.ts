@@ -8,6 +8,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { ElapsedTimePipe } from './elapsed-time.pipe';
+import { MostlikedDirective } from './mostliked.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ElapsedTimePipe } from './elapsed-time.pipe';
     QuoteComponent,
     QuoteDetailComponent,
     QuoteFormComponent,
-    ElapsedTimePipe
+    ElapsedTimePipe,
+    MostlikedDirective
   ],
   imports: [
     BrowserModule,

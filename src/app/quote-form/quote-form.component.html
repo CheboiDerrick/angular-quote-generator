@@ -1,4 +1,5 @@
 <!-- Modal -->
+<form (ngSubmit)='submitQuote(quoteForm); quoteForm.resetForm({})' #quoteForm='ngForm'>
 <div
   class="modal fade"
   id="staticBackdrop"
@@ -20,7 +21,7 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)='submitQuote' #quoteForm='ngForm'>
+        
           <div class="form-floating mb-3">
             <input
               type="text"
@@ -35,9 +36,9 @@
           </div>
           <div class="form-floating mb-3">
             <input
-              type="email"
+              type="text"
               class="form-control"
-              id="author" name="author"
+              id="author" name="author" [(ngModel)]="newQuote.author"
               placeholder="Nelson Mandela"
             />
             <label for="floatingInput">Author</label>
@@ -45,9 +46,9 @@
           </div>
           <div class="form-floating mb-3">
             <input
-              type="email"
+              type="text"
               class="form-control"
-              id="floatingInput"
+              id="publisher" name="publisher" [(ngModel)]="newQuote.publisher"
               placeholder="name@example.com"
             />
             <label for="floatingInput">Publisher</label>
@@ -56,7 +57,7 @@
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Publish Quote</button>
           </div>
-        </form>
+        
       </div>
       <div class="modal-footer d-flex align-items-center justify-content-end">
         <button type="button" class="btn btn-danger" type="button"
@@ -66,3 +67,4 @@
     </div>
   </div>
 </div>
+</form>

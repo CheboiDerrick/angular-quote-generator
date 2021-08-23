@@ -45,18 +45,13 @@
       align-items-center
     "
   >
-    <h1 class="mb-2">TIMELESS QUOTES</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio blanditiis
-      at sapiente deleniti tempore eaque unde! Libero illo veniam nulla
-      doloribus dolore? Illum beatae modi maiores exercitationem sapiente
-      placeat adipisci mollitia soluta in quam, aperiam tempore vitae ut quis
-      quisquam cupiditate iure labore dignissimos dolorem nobis. Maxime laborum
-      architecto delectus.
+    <h1 class="display-1 my-3">Timeless Quotes</h1>
+    <p class="h3 mx-5 my-3 text-center">
+      My task, which I am trying to achieve is, by the power of the written word, to make you hear, to make you feel--it is, before all, to make you see.
     </p>
     <button
       type="button"
-      class="btn btn-primary btn-outline-success"
+      class="btn btn-primary btn-outline-success my-4 mx-3"
       data-bs-toggle="modal"
       data-bs-target="#staticBackdrop"
     >
@@ -67,13 +62,13 @@
 <div class="container-fluid quote-sec mt-0">
   <div
     class="
-      row row-cols-lg-3 row-cols-md-2 row-cols-sm-1
+      row row-cols-lg-4 row-cols-md-2 row-cols-sm-1
       text-center
       quote-cards
     "
   >
-    <div class="col mt-4 mb-3" *ngFor="let quote of quotes; let i = index">
-      <div class="card">
+    <div class="col mt-4 mb-3" *ngFor="let quote of quotes; let i = index" appMostliked [quotes]='quotes'>
+      <div class="card h-100">
         <div class="d-flex justify-content-between mx-3">
           <div class="div">
             <p class="mt-1">{{ quote.postDate | elapsedTime}}</p>
@@ -106,14 +101,14 @@
   </div>
 </div>
 <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
-<footer class='text-center'>
-  <div class="logo">
+<footer class='text-center mb-0'>
+  <div class="logo mb-3">
     <img src="../../assets/Timeless 1.svg" alt="logo">
   </div>
   <div class="address">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa impedit porro rerum necessitatibus quis.</p>
   </div>
-  <div class="copyright">
+  <div class="copyright mb-3">
     <p>&copy; 2021 | Timeless Quotes</p>
   </div>
 </footer>

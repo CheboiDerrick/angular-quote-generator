@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Quote } from '../quote';
 
 @Component({
@@ -10,10 +9,7 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor'),
-    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor'),
-    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor'),
-    new Quote('The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor')
+    new Quote(1,'The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor')
   ]
 
   toggleDetails(index: number) {
@@ -21,7 +17,10 @@ export class QuoteComponent implements OnInit {
   }
 
   addNewQuote(quote: Quote) {
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
     this.quotes.push(quote)
+ 
   }
 
   addUpvote(index: number) {
@@ -31,6 +30,10 @@ export class QuoteComponent implements OnInit {
   addDownvote(index: number) {
     this.quotes[index].downVote += 1
   }
+
+  sortByLikes = this.quotes.sort(function (q1, q2) {
+    return q2.upVote - q1.upVote;
+  });
 
   quoteDelete(isDeleteQuote: boolean, index: number) {
     if (isDeleteQuote) {

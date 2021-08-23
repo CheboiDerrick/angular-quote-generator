@@ -1,6 +1,7 @@
 .navbar-custom {
   background-color: #1d2024;
-  height: 100px;
+  /* height: 100px; */
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
 nav li .active {
@@ -18,31 +19,66 @@ nav button {
 
 .banner {
   background: url("../../assets/bgbanner.png") no-repeat;
-  height: 90vh;
+  /* height: 70vh; */
   padding: 0;
 }
 
 .banner-inner {
-  background-color: rgba(29, 32, 36, 0.8);
-  height: 90vh;
+  background-color: rgba(0, 0, 255, 0.6);
+  /* height: 70vh; */
   padding: 0;
   color: white;
+}
+
+.banner-inner p {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  /* font-size: 24px;
+  line-height: 29px; */
 }
 
 .banner-inner button {
   border-radius: 0;
   color: ivory;
-  border: 1px solid ivory;
+  border: 2px solid ivory;
+  background-color: transparent;
+  width: 20.813rem;
+  height: 77px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+.banner-inner button:hover,
+.card-body button:hover,
+nav button:hover {
+  transform: scale(0.9);
+  transition: ease-in-out;
+  transition-duration: 500ms;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  /* font-size: 7vw;
+  line-height: 117px; */
 }
 
 .quote-cards {
   width: 90%;
   margin: 0 auto;
-  background-color: #353b43;
+  background-color: #353b4333;
 }
 
 .quote-sec {
-  background-color: #353b43;
+  background-color: whitesmoke;
+  /* width: 100vw; */
+  padding: 0;
+  margin: 0;
 }
 
 .card {
@@ -51,20 +87,20 @@ nav button {
 }
 
 .card-title {
-  font-family: Montserrat;
-  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 32px;
   line-height: 59px;
 }
 
-.card img:hover{
-    transform: scale(1.2);
-    transition: ease-in-out;
-    transition-duration: 300ms;
+.card img:hover {
+  transform: scale(1.2);
+  transition: ease-in-out;
+  transition-duration: 300ms;
 }
 
-.card-body button{
+.card-body button {
   border-radius: 0;
   color: white;
   border: 1px solid white;
@@ -72,18 +108,17 @@ nav button {
 }
 
 footer {
-  background-color: #1D2024;
+  background-color: #1d2024;
   font-weight: 300;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .logo {
-  margin-bottom: 20px;
   height: 65px;
 }
 
 .copyright {
   font-size: 18px;
-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
