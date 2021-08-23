@@ -14,10 +14,23 @@ nav li .active {
 nav li a {
   color: #caced2;
 }
+
+nav li a:hover{
+  color: #57cbcc;
+}
 nav button {
   border-radius: 0;
   color: #57cbcc;
   border: 1px solid #57cbcc;
+  background-color: transparent;
+  border: 1px solid ivory;
+  color: white;
+}
+
+nav button:hover{
+  color: #57cbcc;
+  border: 1px solid #57cbcc;
+  background-color: transparent;
 }
 
 .banner {
