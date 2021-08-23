@@ -47,7 +47,9 @@
   >
     <h1 class="display-1 my-3">Timeless Quotes</h1>
     <p class="h3 mx-5 my-3 text-center">
-      My task, which I am trying to achieve is, by the power of the written word, to make you hear, to make you feel--it is, before all, to make you see.
+      My task, which I am trying to achieve is, by the power of the written
+      word, to make you hear, to make you feel--it is, before all, to make you
+      see.
     </p>
     <button
       type="button"
@@ -67,19 +69,34 @@
       quote-cards
     "
   >
-    <div class="col mt-4 mb-3" *ngFor="let quote of quotes; let i = index" appMostliked [quotes]='quotes'>
+    <div
+      class="col mt-4 mb-3"
+      *ngFor="let quote of sortByLikes; let i = index"
+      appMostliked
+      [quotes]="quotes"
+    >
       <div class="card h-100">
         <div class="d-flex justify-content-between mx-3">
           <div class="div">
-            <p class="mt-1">{{ quote.postDate | elapsedTime}}</p>
+            <p class="mt-1">{{ quote.postDate | elapsedTime }}</p>
           </div>
           <div class="d-flex my-1 mx-1 justify-content-end align-items-center">
             <div class="me-3">
-              <img src="../../assets/upVote.png" alt="like" class="me-1" (click)='addUpvote(i)' />
+              <img
+                src="../../assets/upVote.png"
+                alt="like"
+                class="me-1"
+                (click)="addUpvote(i)"
+              />
               {{ quote.upVote }}
             </div>
             <div>
-              <img src="../../assets/downVote.png" alt="dislike" class="me-1" (click)='addDownvote(i)' />
+              <img
+                src="../../assets/downVote.png"
+                alt="dislike"
+                class="me-1"
+                (click)="addDownvote(i)"
+              />
               {{ quote.downVote }}
             </div>
           </div>
@@ -93,20 +110,24 @@
           </button>
           <app-quote-detail
             *ngIf="quote.showDetail"
-            [quote]="quote" (isDeleteQuote) = 'quoteDelete($event,i)'
+            [quote]="quote"
+            (isDeleteQuote)="quoteDelete($event, i)"
           ></app-quote-detail>
         </div>
       </div>
     </div>
   </div>
 </div>
-<app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
-<footer class='text-center mb-0'>
+<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+<footer class="text-center mb-0">
   <div class="logo mb-3">
-    <img src="../../assets/Timeless 1.svg" alt="logo">
+    <img src="../../assets/Timeless 1.svg" alt="logo" />
   </div>
   <div class="address">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa impedit porro rerum necessitatibus quis.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsa
+      impedit porro rerum necessitatibus quis.
+    </p>
   </div>
   <div class="copyright mb-3">
     <p>&copy; 2021 | Timeless Quotes</p>

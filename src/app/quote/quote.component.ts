@@ -31,9 +31,12 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].downVote += 1
   }
 
-  sortByLikes = this.quotes.sort(function (q1, q2) {
-    return q2.upVote - q1.upVote;
-  });
+  get sortByLikes()
+  {
+     return this.quotes.sort((q1, q2) => {
+      return q2.upVote - q1.upVote;
+    })
+  } 
 
   quoteDelete(isDeleteQuote: boolean, index: number) {
     if (isDeleteQuote) {
