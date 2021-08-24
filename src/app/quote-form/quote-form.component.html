@@ -1,32 +1,37 @@
 <!-- Modal -->
-<form (ngSubmit)='submitQuote(quoteForm); quoteForm.resetForm({})' #quoteForm='ngForm' autocomplete="off" >
-<div
-  class="modal fade"
-  id="staticBackdrop"
-  data-bs-backdrop="static"
-  data-bs-keyboard="false"
-  tabindex="-1"
-  aria-labelledby="staticBackdropLabel"
-  aria-hidden="true"
+<form
+  (ngSubmit)="submitQuote(quoteForm); quoteForm.resetForm({})"
+  #quoteForm="ngForm"
+  autocomplete="off"
 >
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Publish Quote</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        
+  <div
+    class="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Publish Quote</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control"
-              id="quote" name="quote" [(ngModel)]="newQuote.quote"
+              id="quote"
+              name="quote"
+              [(ngModel)]="newQuote.quote"
               placeholder="Dreamers do not sleep"
             />
             <label for="quote">Quote</label>
@@ -38,7 +43,9 @@
             <input
               type="text"
               class="form-control"
-              id="author" name="author" [(ngModel)]="newQuote.author"
+              id="author"
+              name="author"
+              [(ngModel)]="newQuote.author"
               placeholder="Nelson Mandela"
             />
             <label for="floatingInput">Author</label>
@@ -48,7 +55,9 @@
             <input
               type="text"
               class="form-control"
-              id="publisher" name="publisher" [(ngModel)]="newQuote.publisher"
+              id="publisher"
+              name="publisher"
+              [(ngModel)]="newQuote.publisher"
               placeholder="name@example.com"
             />
             <label for="floatingInput">Publisher</label>
@@ -57,14 +66,19 @@
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Publish Quote</button>
           </div>
-        
-      </div>
-      <div class="modal-footer d-flex align-items-center justify-content-end">
-        <button type="button" class="btn btn-danger" type="button"
-        data-bs-dismiss="modal"
-        aria-label="Close">Close</button>
+        </div>
+        <div class="modal-footer d-flex align-items-center justify-content-end">
+          <button
+            type="button"
+            class="btn btn-danger"
+            type="button"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </form>

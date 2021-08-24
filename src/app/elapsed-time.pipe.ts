@@ -6,12 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ElapsedTimePipe implements PipeTransform {
   transform(value: any): any {
-    let seconds: number = 0
+    setInterval(function(){ 
+      let seconds: number = 0
     let minutes: number
     let hours: number
     let days: number
     let display: any
-    let elapsedTimer = (): any => {
 
       let now = new Date().getTime();
       console.log(now);
@@ -29,8 +29,7 @@ export class ElapsedTimePipe implements PipeTransform {
       console.log(seconds);
 
 
-    }
-    setInterval(function () {
+    
       if (days >= 1) {
         return days + ' days ago'
       } else if (hours >= 1) {
@@ -48,9 +47,8 @@ export class ElapsedTimePipe implements PipeTransform {
 
         return display
       }
-
-    }, 1000);
-
+     }, 1000);
+    
   }
 
 

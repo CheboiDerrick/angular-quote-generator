@@ -35,7 +35,7 @@ There are no known bugs so far.
 The website has been developed using the following:
 - Angular 12.2.0
 - Bootstrap
-- You can also live view the website [here](https://cheboiderrick.github.io/pizzacart/)
+- You can also live view the website [here](https://naughty-neumann-be280d.netlify.app/)
 
 ## Support and contact details
 Feel free to give suggestions or bugs and possible suggestions through:
