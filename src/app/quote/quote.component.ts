@@ -9,7 +9,11 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1,'The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor')
+    new Quote(1,'The stars are for only those who can reach them', 'Nelson Mandela', 'Andy Taylor'),
+    new Quote(2,`The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life`, 'Bill Gates', 'Andy Taylor'),
+    new Quote(3,`Let's go invent tomorrow instead of worrying about what happened yesterday`, 'Steve Jobs', 'Andy Taylor'),
+    new Quote(4,` All of the biggest technological inventions created by man - the computer - says little about his intelligence, but speaks volumes about his laziness.`, 'Mark Kennedy', 'Andy Taylor')
+
   ]
 
   toggleDetails(index: number) {
